@@ -1,0 +1,23 @@
+'use strict';
+
+function checkForSpam(message) {
+  if (typeof message != 'string') {
+    return 'The ability to speak does not make you intelligent.'; //improvement, error handler
+  }
+
+  return message.toLowerCase().includes('spam') ||
+    message.toLowerCase().includes('sale')
+    ? true
+    : false;
+}
+
+console.log(checkForSpam('Latest technology news')); // false
+console.log(checkForSpam('JavaScript weekly newsletter')); // false
+console.log(checkForSpam('Get best sale offers now!')); // true
+console.log(checkForSpam('Amazing SalE, only tonight!')); // true
+console.log(checkForSpam('Trust me, this is not a spam message')); // true
+console.log(checkForSpam('Get rid of sPaM emails. Our book in on sale!')); // true
+console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+
+// Error handler, uncomment to check:
+// console.log(checkForSpam(null));
